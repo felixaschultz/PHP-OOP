@@ -1,5 +1,5 @@
 <?php
-    namespace Intastellar;
+    /* namespace Intastellar; */
     class DB{
         public $userId;
         private $db = "intastellar";
@@ -7,18 +7,22 @@
         private $pwd = "";
         private $user = "root";
         public function connect(){
-            return mysqli_connect($this->host, $this->user, $this->pwd, $this->db);
+            try{
+                return new PDO('mysqli:host='. $this->host .';dbname='. $this->db, $this->user, $this->pwd);
+            } catch (PDOException $e){
+
+            }
         }
 
        public function query($userId){
         if($this->connect()){
-            return mysqli_query($this->connect(), "SELECT * FROM users WHERE id = '$userId'")->fetch_object();
+            return $this->connect()->query("SELECT * FROM users WHERE id = '$userId'");
         }
        }
 
        public function queryAll(){
         if($this->connect()){
-            return mysqli_query($this->connect(), "SELECT * FROM users")->fetch_object();
+            return  $this->connect()->query("SELECT * FROM users");
         }
        }
     }
