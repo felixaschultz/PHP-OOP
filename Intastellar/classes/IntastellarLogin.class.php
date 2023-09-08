@@ -1,5 +1,5 @@
 <?php
-    namespace Intastellar\classes;
+    namespace Intastellar;
     class Accounts{
         public function __construct($var = null) {
             $this->$var = $var;

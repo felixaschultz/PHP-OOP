@@ -1,5 +1,5 @@
 <?php
-    namespace Intastellar\classes;
+    namespace Intastellar;
     class db{
         public function __construct($var = null) {
             $this->$host = 'localhost';
