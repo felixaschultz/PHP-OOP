@@ -5,7 +5,7 @@
         private $db = "intastellar";
         private $host = "localhost";
         private $pwd = "";
-        private $user = "";
+        private $user = "root";
         public function connect(){
             return mysqli_connect($this->host, $this->user, $this->pwd, $this->db);
         }
