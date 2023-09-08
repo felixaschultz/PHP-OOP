@@ -1,11 +1,9 @@
 <?php
     namespace Intastellar;
+    require_once('IntastellarDB.class.php');
     class User{
-        public function __construct($var = null) {
-            $this->$var = $var;
-        }
-
+        public $userId;
         public function getUser(){
-
+            \Intastellar\db->query($this->userId);
         }
     }
