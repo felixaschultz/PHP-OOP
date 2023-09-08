@@ -1,9 +1,10 @@
 <?php
-    namespace Intastellar;
-    require_once('IntastellarDB.class.php');
+   include('../namespace/Intastellar.namespace.php');
+    include('IntastellarDB.class.php');
     class User{
         public $userId;
+        private $db = new Intastellar\DB();
         public function getUser(){
-            \Intastellar\db->query($this->userId);
+            $this->db->query($this->userId);
         }
     }
