@@ -1,5 +1,5 @@
 <?php
-    include('namespace/Intastellar.namespace.php');
+    namespace Intastellar;
     class Accounts{
         public $userId;
         public function getUser(){

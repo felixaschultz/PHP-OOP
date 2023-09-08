@@ -1,6 +1,6 @@
 <?php
-    include('namespace/Intastellar.namespace.php');
-    class IntastellarDB{
+    namespace Intastellar;
+    class DB{
         public $userId;
         private $db = "intastellar";
         private $host = "localhost";
@@ -13,6 +13,12 @@
        public function query($userId){
         if($this->connect()){
             return mysqli_query($this->connect(), "SELECT * FROM users WHERE id = '$userId'")->fetch_object();
+        }
+       }
+
+       public function queryAll(){
+        if($this->connect()){
+            return mysqli_query($this->connect(), "SELECT * FROM users")->fetch_object();
         }
        }
     }
