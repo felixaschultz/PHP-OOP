@@ -1,5 +1,6 @@
 <?php
-    class DB{
+    include('namespace/Intastellar.namespace.php');
+    class IntastellarDB{
         public $userId;
         private $db = "intastellar";
         private $host = "localhost";
