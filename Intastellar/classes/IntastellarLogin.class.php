@@ -1,6 +1,6 @@
 <?php
-    
-    class IntastellarAccounts extends Intastellar{
+    namespace Intastellar\classes;
+    class Accounts{
         public function __construct($var = null) {
             $this->$var = $var;
         }

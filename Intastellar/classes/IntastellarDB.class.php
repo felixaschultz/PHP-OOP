@@ -1,5 +1,6 @@
 <?php
-    class IntastellarDB extends Intastellar{
+    namespace Intastellar\classes;
+    class db{
         public function __construct($var = null) {
             $this->$host = 'localhost';
             $this->$user = 'localhost';
