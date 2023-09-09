@@ -15,13 +15,8 @@
         /**
          * Summary of __construct
          */
-        var $username;
-        var $password;
-        var $email;
-        var $dbname;
-        var $host;
         public function __construct() {
-            $this->db = new \Intastellar\DB($this->host, $this->dbusername, $this->password, $this->dbname);
+            
         }
 
         // Create a new Timetable
