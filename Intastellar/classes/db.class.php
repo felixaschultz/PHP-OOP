@@ -2,17 +2,27 @@
     namespace Intastellar;
     /**
      * Summary of DB
-     * @property mixed $username
+     * @var mixed $username
      * @property mixed $password
      * @property mixed $email
+     * @property mixed $dbname
+     * @property mixed $host
      */
 
     class DB {
         /**
          * Summary of __construct
          */
-        public function __construct() {
-            
+        var $username;
+        var $password;
+        var $email;
+        var $dbname;
+        var $host;
+        public function __construct($host, $username, $password, $dbname) {
+            $this->host = $host;
+            $this->username = $username;
+            $this->password = $password;
+            $this->dbname = $dbname;
         }
 
         // Connect to the Intastellar Database
@@ -21,7 +31,12 @@
          * @return void
          */
         function connect(){
+            $conn = new \mysqli($this->host, $this->username, $this->password, $this->dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
+            return $conn;
         }
 
         // Disconnect from the Intastellar Database
@@ -30,7 +45,7 @@
          * @return void
          */
         function disconnect(){
-
+            
         }
 
         // Execute a query on the Intastellar Database
@@ -40,7 +55,7 @@
          * @return void
          */
         function query($query){
-
+            $db = $this->connect();
         }
 
         // Execute a query on the Intastellar Database and return the result

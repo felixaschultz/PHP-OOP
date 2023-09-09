@@ -12,23 +12,20 @@
      * @property mixed $last_logout
      * @property mixed $status
      * @property mixed $role
+     * @property mixed $db
      */
     class Account {
         /**
          * Summary of __construct
          */
-        var $username;
-        var $password;
-        var $email;
-        var $id;
-        var $created;
-        var $last_login;
-        var $last_logout;
-        var $status;
-        var $role;
-        var $db = new \Intastellar\DB();
+        var $dbusername;
+        var $dbpassword;
+        var $dbname;
+        var $dbhost;
+        var $db;
+
         public function __construct() {
-            
+            $this->db = new \Intastellar\DB($this->dbhost, $this->dbusername, $this->dbpassword, $this->dbname);
         }
 
         // Login an Intastellar User
