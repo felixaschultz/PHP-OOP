@@ -1,9 +1,44 @@
 <?php
     namespace Intastellar;
-    require_once('IntastellarDB.class.php');
-    require_once('IntastellarUser.class.php');
-    require_once('IntastellarLogin.class.php');
-    $user = new IntastellarUser();
-    $user = $user->getUser(1);
+    class Intastellar {
+        public function __construct() {
+            
+        }
 
-    echo $user;
+        // Login an Intastellar User
+        function userLogin($username, $password){
+            
+        }
+
+        // Log an Intastellar User out
+        function userLogout($username){
+
+        }
+
+        // Create a new Intastellar User
+        function userCreate(){
+
+        }
+
+        // Delete an Intastellar User
+        function userDelete($id){
+
+        }
+
+        // Update an Intastellar User
+        function userUpdate($id){
+
+        }
+
+        // Get an Intastellar User
+        function userGet($id){
+
+        }
+
+        // Get all Intastellar Users
+        function userGetAll(){
+
+        }
+
+        
+    }
