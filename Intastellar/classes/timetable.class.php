@@ -1,6 +1,5 @@
 <?php
     namespace Intastellar;
-    include_once("db.class.php");
     /**
      * Summary of DB
      * @property mixed $username
@@ -12,7 +11,7 @@
      * @property mixed $dbusername
      * @property mixed $dbpassword
      */
-    class Timetable{
+    class Timetable extends Intastellar{
         /**
          * Summary of __construct
          */
@@ -66,3 +65,6 @@
 
         //
     }
+
+    $time = new \Intastellar\Timetable();
+?>

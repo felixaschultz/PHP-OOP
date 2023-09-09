@@ -9,7 +9,7 @@
      * @property mixed $host
      */
 
-    class DB {
+    class DB extends Intastellar {
         /**
          * Summary of __construct
          */
@@ -28,7 +28,7 @@
         // Connect to the Intastellar Database
         /**
          * Summary of connect
-         * @return void
+         * 
          */
         function connect(){
             $conn = new \mysqli($this->host, $this->username, $this->password, $this->dbname);
@@ -45,7 +45,8 @@
          * @return void
          */
         function disconnect(){
-            
+            $db = $this->connect();
+            $db->close();
         }
 
         // Execute a query on the Intastellar Database
@@ -56,43 +57,9 @@
          */
         function query($query){
             $db = $this->connect();
+            $result = $db->query($query)->fetch_object();
+
+            return $result;
         }
-
-        // Execute a query on the Intastellar Database and return the result
-        /**
-         * Summary of queryResult
-         * @param mixed $query
-         * @return void
-         */
-        function queryResult($query){
-
-        }
-
-        // Execute a query on the Intastellar Database and return the number of rows affected
-        /**
-         * Summary of queryAffected
-         * @param mixed $query
-         * @return void
-         */
-        function queryAffected($query){
-
-        }
-
-        // Execute a query on the Intastellar Database and return the number of rows affected
-        /**
-         * Summary of queryLastInsertId
-         * @param mixed $query
-         * @return void
-         */
-        function queryLastInsertId($query){
-
-        }
-
-        // Execute a query on the Intastellar Database and return the number of rows affected
-        /**
-         * Summary of queryLastInsertId
-         * @param mixed $query
-         * @return void
-         */
     }
 ?>
